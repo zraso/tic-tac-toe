@@ -8,7 +8,7 @@ The rules of tic-tac-toe are as follows:
 
 As a player,
 So that I can play against someone else,
-I want to know what symbol I am using
+I want the game to start with two players
 
 * Players take turns until the game is over
 
@@ -98,12 +98,3 @@ Game.check_if_empty -> Game.Field_A3.empty? => True -> Game.Field_B3.empty? => F
 Game.check_claim_wins -> False
 Game.all_fields_taken? -> True
 Game.Over? => True => "All fields taken, game over!"
-
-
-
-
-
-
-
-
-
