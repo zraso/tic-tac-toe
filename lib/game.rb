@@ -1,4 +1,4 @@
-require 'player'
+require_relative 'player'
 
 class Game
 
@@ -20,6 +20,10 @@ class Game
     else
       @turn = "Player X's turn!"
     end
+  end
+
+  def field_empty?(field)
+    !((player_x.fields.include? field) || (player_o.fields.include? field))
   end
 
 end

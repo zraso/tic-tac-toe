@@ -14,7 +14,7 @@ I want the game to start with two players
 
 As a player,
 So that I can play against my opponent,
-I want to be able to take turns
+I want to be able to switch turns
 
 * A player can claim a field if it is not already taken
 
@@ -48,7 +48,7 @@ Build the business logic for a game of tic tac toe. It should be easy to impleme
 
 OBJECT    |      MESSAGES
 Player          Symbol, Claim(field), Fields_taken          
-Game            New.Player, Check_if_empty, Switch_turn, Check_claim_wins?, All_fields_taken?
+Game            New.Player, empty?, Switch_turn, Check_claim_wins?, All_fields_taken?
 
 # Example Game
 
@@ -62,7 +62,7 @@ New_Player => O
 
 ## First player claims a field
 X.claim('A1')
-Game.check_if_empty -> Game.Field_A1.empty? => True -> Game.Field_A1.empty? => False
+Game.check_if_empty -> Game.Field('A1').empty? => True -> Game.Field('A1').empty? => False
 Game.check_claim_wins -> False
 Game.switch_turn => "Player O's turn!"
 
