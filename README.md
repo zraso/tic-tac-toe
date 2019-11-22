@@ -16,17 +16,17 @@ As a player,
 So that I can play against my opponent,
 I want to be able to switch turns -->
 
-* A player can claim a field if it is not already taken
+<!-- * A player can claim a field if it is not already taken
 
 As a player,
 So that I can play the game,
-I want to be able to claim a field only if it is empty
+I want to be able to claim a field only if it is empty -->
 
-* A turn ends when a player claims a field
+<!-- * A turn ends when a player claims a field
 
 As a player,
 So my opponent can take their turn,
-I want to switch turns after I claim a field
+I want to switch turns after I claim a field -->
 
 * A player wins if they claim all the fields in a row, column or diagonal
 

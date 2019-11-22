@@ -24,20 +24,19 @@ describe Game do
   describe '#switch_turns' do
     it 'switches turns first time' do
       game.start
-      player_x.claim('A1')
-      expect(game.switch_turn).to eq "Player O's turn!"
+      expect(game.claim('A1')).to eq "Player O's turn!"
     end
 
     it 'switches turn second time' do
       game.start
-      player_x.claim('A1')
+      game.claim('A1')
       game.switch_turn
-      player_o.claim('B1')
+      game.claim('B1')
       expect(game.switch_turn).to eq "Player X's turn!"
     end
   end
 
-  describe 'empty?' do
+  describe '#field_empty?' do
     it 'returns true if field is empty' do
       game.start
       expect(game.field_empty?('A1')).to eq true
@@ -45,9 +44,33 @@ describe Game do
 
     it 'returns false if field is not empty' do
       game.start
-      player_x.claim('A1')
+      game.claim('A1')
       allow(player_x).to receive(:fields) { ['A1'] }
       expect(game.field_empty?('A1')).to eq false
     end
   end
+
+  describe '#claim_field' do
+    it 'raises an error if the field is already taken' do
+      game.start
+      game.claim('A1')
+      allow(player_x).to receive(:fields) { ['A1'] }
+      expect {game.claim('A1')}.to raise_error('Error: field already taken')
+    end
+  end
+
+  describe '#all_fields_taken?' do
+    it 'returns true if all fields are taken' do
+      allow(player_x).to receive(:fields) { ['A1', 'B1', 'C2', 'A3', 'C3'] }
+      allow(player_o).to receive(:fields) { ['A2', 'B2', 'B3', 'C1'] }
+      expect(game.all_fields_taken?).to eq true
+    end
+
+    it 'returns false if there are empty fields' do
+      allow(player_x).to receive(:fields) { ['A1', 'B1', 'C2'] }
+      allow(player_o).to receive(:fields) { ['A2', 'B2', 'B3', 'C1'] }
+      expect(game.all_fields_taken?).to eq false
+    end
+  end
+
 end

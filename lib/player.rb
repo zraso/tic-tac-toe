@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Player
-  attr_reader :fields
+  attr_reader :fields, :symbol
 
   def initialize(symbol)
     @symbol = symbol

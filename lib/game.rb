@@ -3,35 +3,45 @@
 require_relative 'player'
 
 class Game
-  attr_reader :player_x, :player_o, :turn
+  attr_reader :player_x, :player_o, :current_player
+  MAX_FIELDS = 9
 
   def initialize(player_x: Player.new('X'), player_o: Player.new('O'))
     @player_x = player_x
     @player_o = player_o
-    @turn = @player_x
+    @current_player = player_x
   end
 
   def start
-    "Player #{@turn.symbol}'s turn!"
+    "Player #{@current_player.symbol}'s turn!"
+  end
+
+  def claim(field)
+    raise 'Error: field already taken' unless field_empty?(field)
+    current_player.claim(field)
+    switch_turn
   end
 
   def switch_turn
-    if turn == player_x
-      @turn = player_o
+    if current_player == player_x
+      @current_player = player_o
     else
-      @turn = player_x
+      @current_player = player_x
     end
     
-    "Player #{@turn.symbol}'s turn!"
+    "Player #{@current_player.symbol}'s turn!"
   end
 
   def field_empty?(field)
     !((player_x.fields.include? field) || (player_o.fields.include? field))
   end
 
-  # def claim(field)
-  #   raise error unless field_empty?(field)
-  #   @turn.claim(field)
-  # end
+  def all_fields_taken?
+    if (player_x.fields.length + player_o.fields.length) >= MAX_FIELDS
+      true
+    else
+      false
+    end
+  end
 
 end
