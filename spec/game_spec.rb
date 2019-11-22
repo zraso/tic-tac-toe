@@ -55,22 +55,21 @@ describe Game do
       game.start
       game.claim('A1')
       allow(player_x).to receive(:fields) { ['A1'] }
-      expect {game.claim('A1')}.to raise_error('Error: field already taken')
+      expect { game.claim('A1') }.to raise_error('Error: field already taken')
     end
   end
 
   describe '#all_fields_taken?' do
     it 'returns true if all fields are taken' do
-      allow(player_x).to receive(:fields) { ['A1', 'B1', 'C2', 'A3', 'C3'] }
-      allow(player_o).to receive(:fields) { ['A2', 'B2', 'B3', 'C1'] }
+      allow(player_x).to receive(:fields) { %w[A1 B1 C2 A3 C3] }
+      allow(player_o).to receive(:fields) { %w[A2 B2 B3 C1] }
       expect(game.all_fields_taken?).to eq true
     end
 
     it 'returns false if there are empty fields' do
-      allow(player_x).to receive(:fields) { ['A1', 'B1', 'C2'] }
-      allow(player_o).to receive(:fields) { ['A2', 'B2', 'B3', 'C1'] }
+      allow(player_x).to receive(:fields) { %w[A1 B1 C2] }
+      allow(player_o).to receive(:fields) { %w[A2 B2 B3 C1] }
       expect(game.all_fields_taken?).to eq false
     end
   end
-
 end

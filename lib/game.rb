@@ -18,17 +18,18 @@ class Game
 
   def claim(field)
     raise 'Error: field already taken' unless field_empty?(field)
+
     current_player.claim(field)
     switch_turn
   end
 
   def switch_turn
-    if current_player == player_x
-      @current_player = player_o
-    else
-      @current_player = player_x
-    end
-    
+    @current_player = if current_player == player_x
+                        player_o
+                      else
+                        player_x
+                      end
+
     "Player #{@current_player.symbol}'s turn!"
   end
 
@@ -37,11 +38,6 @@ class Game
   end
 
   def all_fields_taken?
-    if (player_x.fields.length + player_o.fields.length) >= MAX_FIELDS
-      true
-    else
-      false
-    end
+    (player_x.fields.length + player_o.fields.length) >= MAX_FIELDS
   end
-
 end
