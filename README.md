@@ -106,3 +106,29 @@ Game.Over? => True => "All fields taken, game over!"
 Game checks if empty -> player raises error if check_empty is false
 
 Fields check if empty
+
+## Game Rules
+
+A1 | A2 | A3
+B1 | B2 | B3
+C1 | C2 | C3
+
+
+Diagonal1 = A1 + B2 + C3
+
+Diagonal2 = A3 + B2 + C1
+
+
+Column1 = A1 + B1 + C1
+
+Column2 = A2 + B2 + C2
+
+Column3 = A3 + B3 + C3
+
+
+Row1 = A1 + A2 + A3
+
+Row2 = B1 + B2 + B3
+
+Row3 = C1 + C2 + C3
+

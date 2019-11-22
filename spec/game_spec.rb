@@ -77,7 +77,21 @@ describe Game do
     it 'ends game if all fields are taken' do
       allow(player_x).to receive(:fields) { %w[A1 B1 C2 A3 C3] }
       allow(player_o).to receive(:fields) { %w[A2 B2 B3 C1] }
-      expect(game.in_play).to eq false
+      expect(game.in_play?).to eq false
+    end
+  end
+
+  describe 'calculate_winner' do
+    it 'returns nil if players have less than three fields' do
+      allow(player_x).to receive(:fields) { %w[A1 B1 C2] }
+      allow(player_o).to receive(:fields) { %w[A2 B2 B3] }
+      expect(game.calculate_winner).to eq nil
+    end
+
+    it 'returns player if player has won with Diagonal 1' do
+      allow(player_x).to receive(:fields) { %w[A1 B2 C3] }
+      allow(player_o).to receive(:fields) { %w[A2 B3 C2] }
+      expect(game.calculate_winner).to eq player_x
     end
   end
 end

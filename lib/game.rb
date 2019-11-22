@@ -34,7 +34,7 @@ class Game
     "Player #{@current_player.symbol}'s turn!"
   end
 
-  def in_play
+  def in_play?
     if all_fields_taken?
       @in_play == false
     else
@@ -48,5 +48,13 @@ class Game
 
   def all_fields_taken?
     (player_x.fields.length + player_o.fields.length) >= MAX_FIELDS
+  end
+
+  def calculate_winner
+    if player_x.fields.include? ('A1' && 'B2' && 'C3')
+      player_x
+    else
+      nil
+    end
   end
 end
