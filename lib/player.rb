@@ -1,5 +1,6 @@
-class Player
+# frozen_string_literal: true
 
+class Player
   attr_reader :fields
 
   def initialize(symbol)
@@ -11,5 +12,4 @@ class Player
     @fields << field
     "#{field} claimed by Player #{@symbol}!"
   end
-
 end

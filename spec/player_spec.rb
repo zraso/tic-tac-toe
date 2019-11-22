@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'player'
 
 describe Player do
@@ -12,6 +14,5 @@ describe Player do
     it 'player y can claim a field' do
       expect(player_o.claim('B1')).to eq 'B1 claimed by Player O!'
     end
-
   end
 end

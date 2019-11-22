@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(player_x: player_x, player_o: player_o )}
-  let (:player_x) { double :player_x, claim: "A1 claimed by Player X!", fields: [] }
-  let (:player_o) { double :player_o, claim: "B1 claimed by Player O!", fields: [] }
+  subject(:game) { described_class.new(player_x: player_x, player_o: player_o) }
+  let (:player_x) { double :player_x, claim: 'A1 claimed by Player X!', fields: [] }
+  let (:player_o) { double :player_o, claim: 'B1 claimed by Player O!', fields: [] }
 
   describe '#start' do
     it 'starts a game' do
@@ -44,9 +46,8 @@ describe Game do
     it 'returns false if field is not empty' do
       game.start
       player_x.claim('A1')
-      allow(player_x).to receive(:fields) {['A1']}
+      allow(player_x).to receive(:fields) { ['A1'] }
       expect(game.field_empty?('A1')).to eq false
     end
   end
-
 end

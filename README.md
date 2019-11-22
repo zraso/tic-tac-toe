@@ -4,23 +4,23 @@ This is a very common tech test as it demonstrates a candidate's knowledge of ba
 ## The brief
 The rules of tic-tac-toe are as follows:
 
-* There are two players in the game (X and O)
+<!-- * There are two players in the game (X and O)
 
 As a player,
 So that I can play against someone else,
-I want the game to start with two players
+I want the game to start with two players -->
 
-* Players take turns until the game is over
+<!-- * Players take turns until the game is over
 
 As a player,
 So that I can play against my opponent,
-I want to be able to switch turns
+I want to be able to switch turns -->
 
 * A player can claim a field if it is not already taken
 
 As a player,
 So that I can play the game,
-I want to be able to claim an empty field
+I want to be able to claim a field only if it is empty
 
 * A turn ends when a player claims a field
 
