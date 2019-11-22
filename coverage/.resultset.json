@@ -207,8 +207,44 @@
         null,
         null,
         null
+      ],
+      "/Users/student/Documents/Makers/weekly-challenges/tic-tac-toe/spec/win_checker_spec.rb": [
+        1,
+        null,
+        1,
+        3,
+        3,
+        null,
+        1,
+        1,
+        2,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Makers/weekly-challenges/tic-tac-toe/lib/calculatewinner.rb": [
+        1,
+        null,
+        1,
+        2,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1574440306
+    "timestamp": 1574441024
   }
 }
