@@ -93,5 +93,11 @@ describe Game do
       allow(player_o).to receive(:fields) { %w[A2 B3 C2] }
       expect(game.calculate_winner).to eq player_x
     end
+
+    it 'returns player if player has won with Diagonal 2' do
+      allow(player_x).to receive(:fields) { %w[A3 B2 C1] }
+      allow(player_o).to receive(:fields) { %w[A1 B2 C2] }
+      expect(game.calculate_winner).to eq player_x
+    end
   end
 end

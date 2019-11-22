@@ -53,6 +53,8 @@ class Game
   def calculate_winner
     if player_x.fields.include? ('A1' && 'B2' && 'C3')
       player_x
+    elsif player_x.fields.include? ('A3' && 'B2' && 'C1')
+      player_x
     else
       nil
     end
