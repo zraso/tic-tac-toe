@@ -4,11 +4,11 @@ require 'game'
 
 describe Game do
   subject(:game) { described_class.new(player_x: player_x, player_o: player_o) }
-  let (:player_x) { double :player_x, claim: 'A1 claimed by Player X!', fields: [] }
-  let (:player_o) { double :player_o, claim: 'B1 claimed by Player O!', fields: [] }
+  let (:player_x) { double :player_x, symbol: 'X', claim: 'A1 claimed by Player X!', fields: [] }
+  let (:player_o) { double :player_o, symbol: 'O', claim: 'B1 claimed by Player O!', fields: [] }
 
   describe '#start' do
-    it 'starts a game' do
+    it 'starts a game with Player X' do
       expect(game.start).to eq "Player X's turn!"
     end
 

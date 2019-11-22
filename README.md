@@ -48,7 +48,8 @@ Build the business logic for a game of tic tac toe. It should be easy to impleme
 
 OBJECT    |      MESSAGES
 Player          Symbol, Claim(field), Fields_taken          
-Game            New.Player, empty?, Switch_turn, Check_claim_wins?, All_fields_taken?
+Game            Initialises with players, start??Do I need this??, Switch_turn, Check_claim_wins?
+FieldsChecker   Fields_empty?, Full?
 
 # Example Game
 
@@ -98,3 +99,10 @@ Game.check_if_empty -> Game.Field_A3.empty? => True -> Game.Field_B3.empty? => F
 Game.check_claim_wins -> False
 Game.all_fields_taken? -> True
 Game.Over? => True => "All fields taken, game over!"
+
+
+## Objects
+
+Game checks if empty -> player raises error if check_empty is false
+
+Fields check if empty

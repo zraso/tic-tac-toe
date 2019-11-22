@@ -8,22 +8,30 @@ class Game
   def initialize(player_x: Player.new('X'), player_o: Player.new('O'))
     @player_x = player_x
     @player_o = player_o
-    @turn = "Player X's turn!"
+    @turn = @player_x
   end
 
   def start
-    "Player X's turn!"
+    "Player #{@turn.symbol}'s turn!"
   end
 
   def switch_turn
-    @turn = if turn == "Player X's turn!"
-              "Player O's turn!"
-            else
-              "Player X's turn!"
-            end
+    if turn == player_x
+      @turn = player_o
+    else
+      @turn = player_x
+    end
+    
+    "Player #{@turn.symbol}'s turn!"
   end
 
   def field_empty?(field)
     !((player_x.fields.include? field) || (player_o.fields.include? field))
   end
+
+  # def claim(field)
+  #   raise error unless field_empty?(field)
+  #   @turn.claim(field)
+  # end
+
 end
