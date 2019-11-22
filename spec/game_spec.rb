@@ -72,4 +72,12 @@ describe Game do
       expect(game.all_fields_taken?).to eq false
     end
   end
+
+  describe '#in_play?' do
+    it 'ends game if all fields are taken' do
+      allow(player_x).to receive(:fields) { %w[A1 B1 C2 A3 C3] }
+      allow(player_o).to receive(:fields) { %w[A2 B2 B3 C1] }
+      expect(game.in_play).to eq false
+    end
+  end
 end

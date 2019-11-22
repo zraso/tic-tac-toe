@@ -10,6 +10,7 @@ class Game
     @player_x = player_x
     @player_o = player_o
     @current_player = player_x
+    @in_play = true
   end
 
   def start
@@ -31,6 +32,14 @@ class Game
                       end
 
     "Player #{@current_player.symbol}'s turn!"
+  end
+
+  def in_play
+    if all_fields_taken?
+      @in_play == false
+    else
+      @in_play = true
+    end
   end
 
   def field_empty?(field)

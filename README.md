@@ -39,10 +39,10 @@ As a player,
 So I know that the game is over,
 I want to know if a player has won
 
-* A game is over when all fields are taken
+<!-- * A game is over when all fields are taken
 As a player,
 So I know if the game is over,
-I want to know if all the fields are taken
+I want to know if all the fields are taken -->
 
 Build the business logic for a game of tic tac toe. It should be easy to implement a working game of tic tac toe by combining your code with any user interface, whether web or command line.
 
