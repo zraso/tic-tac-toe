@@ -12,5 +12,4 @@ class Player
     @fields << field
     "#{field} claimed by Player #{@symbol}!"
   end
-
 end

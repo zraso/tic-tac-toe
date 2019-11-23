@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'field_checker'
 
 describe FieldChecker do
-  let(:player_x) {double :player_x, fields: ['A1', 'C1'] }
-  let(:player_o) {double :player_o, fields: ['B1']}
-  subject(:field_checker) { described_class.new(player_x, player_o)}
+  let(:player_x) { double :player_x, fields: %w[A1 C1] }
+  let(:player_o) { double :player_o, fields: ['B1'] }
+  subject(:field_checker) { described_class.new(player_x, player_o) }
 
   describe '#empty?' do
     it 'returns true if field is empty' do

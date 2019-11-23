@@ -3,18 +3,14 @@
 require_relative 'player'
 
 class Game
-  attr_reader :player_x, :player_o, :current_player, :winner
+  attr_reader :player_x, :player_o, :current_player
 
-  def initialize(player_x: Player.new('X'), player_o: Player.new('O'), winner: CalculateWinner.new)
+  def initialize(player_x: Player.new('X'), player_o: Player.new('O'))
     @player_x = player_x
     @player_o = player_o
     @current_player = player_x
-    @winner = winner
+    @winner = CalculateWinner.new
     @field_checker = FieldChecker.new(player_x, player_o)
-  end
-
-  def start
-    "Player #{@current_player.symbol}'s turn!"
   end
 
   def claim(field)

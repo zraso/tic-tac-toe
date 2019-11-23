@@ -7,11 +7,7 @@ describe Game do
   let (:player_x) { double :player_x, symbol: 'X', claim: 'A1 claimed by Player X!', fields: [] }
   let (:player_o) { double :player_o, symbol: 'O', claim: 'B1 claimed by Player O!', fields: [] }
 
-  describe '#start' do
-    it 'starts a game with Player X' do
-      expect(game.start).to eq "Player X's turn!"
-    end
-
+  describe '#initialize' do
     it 'starts a game with player X' do
       expect(game.player_x).to eq player_x
     end
@@ -23,12 +19,10 @@ describe Game do
 
   describe '#switch_turns' do
     it 'switches turns first time' do
-      game.start
       expect(game.claim('A1')).to eq "Player O's turn!"
     end
 
     it 'switches turn second time' do
-      game.start
       game.claim('A1')
       game.switch_turn
       game.claim('B1')
@@ -38,7 +32,6 @@ describe Game do
 
   describe '#claim_field' do
     it 'raises an error if the field is already taken' do
-      game.start
       game.claim('A1')
       allow(player_x).to receive(:fields) { ['A1'] }
       expect { game.claim('A1') }.to raise_error('Error: field already taken')

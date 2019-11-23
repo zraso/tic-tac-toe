@@ -1,14 +1,15 @@
-class CalculateWinner
+# frozen_string_literal: true
 
+class CalculateWinner
   def initialize
-    @win_rules = [['A1', 'B2', 'C3'],
-    ['A3', 'B2', 'C1'],
-    ['A1', 'B1', 'C1'],
-    ['A2', 'B2', 'C2'],
-    ['A3', 'B3', 'C3'], 
-    ['A1', 'A2', 'A3'], 
-    ['B1', 'B2', 'B3'], 
-    ['C1', 'C2', 'C3']]
+    @win_rules = [%w[A1 B2 C3],
+                  %w[A3 B2 C1],
+                  %w[A1 B1 C1],
+                  %w[A2 B2 C2],
+                  %w[A3 B3 C3],
+                  %w[A1 A2 A3],
+                  %w[B1 B2 B3],
+                  %w[C1 C2 C3]]
   end
 
   def check(player)
@@ -17,6 +18,7 @@ class CalculateWinner
     loop do
       return true if player.fields.sort == @win_rules[index].sort
       break if index == 7
+
       index += 1
     end
 

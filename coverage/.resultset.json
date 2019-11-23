@@ -2,6 +2,8 @@
   "RSpec": {
     "coverage": {
       "/Users/student/Documents/Makers/weekly-challenges/tic-tac-toe/spec/field_checker_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -39,14 +41,15 @@
         null
       ],
       "/Users/student/Documents/Makers/weekly-challenges/tic-tac-toe/lib/field_checker.rb": [
-        1,
+        null,
         null,
         1,
         1,
+        1,
         null,
         1,
-        11,
-        11,
+        10,
+        10,
         null,
         null,
         1,
@@ -64,9 +67,9 @@
         1,
         null,
         1,
-        7,
-        7,
-        7,
+        6,
+        6,
+        6,
         null,
         1,
         1,
@@ -77,12 +80,7 @@
         1,
         null,
         null,
-        1,
-        1,
         null,
-        null,
-        null,
-        1,
         1,
         1,
         1,
@@ -93,11 +91,9 @@
         1,
         1,
         1,
-        1,
         null,
         null,
         null,
-        1,
         1,
         1,
         1,
@@ -114,18 +110,13 @@
         null,
         1,
         1,
-        1,
         null,
         1,
-        6,
-        6,
-        6,
-        6,
-        6,
-        null,
-        null,
-        1,
-        4,
+        5,
+        5,
+        5,
+        5,
+        5,
         null,
         null,
         1,
@@ -161,7 +152,6 @@
         2,
         2,
         null,
-        null,
         null
       ],
       "/Users/student/Documents/Makers/weekly-challenges/tic-tac-toe/spec/player_spec.rb": [
@@ -185,6 +175,8 @@
         null
       ],
       "/Users/student/Documents/Makers/weekly-challenges/tic-tac-toe/spec/win_calculator_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -216,14 +208,14 @@
         1,
         null,
         null,
-        null,
         null
       ],
       "/Users/student/Documents/Makers/weekly-challenges/tic-tac-toe/lib/win_calculator.rb": [
-        1,
+        null,
         null,
         1,
-        10,
+        1,
+        9,
         null,
         null,
         null,
@@ -239,6 +231,7 @@
         4,
         25,
         22,
+        null,
         21,
         null,
         null,
@@ -247,6 +240,6 @@
         null
       ]
     },
-    "timestamp": 1574529880
+    "timestamp": 1574535047
   }
 }

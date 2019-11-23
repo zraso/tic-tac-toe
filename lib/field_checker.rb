@@ -1,5 +1,6 @@
-class FieldChecker
+# frozen_string_literal: true
 
+class FieldChecker
   attr_reader :player_x, :player_o
   MAX_FIELDS = 9
 
