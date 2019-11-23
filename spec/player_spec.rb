@@ -3,7 +3,7 @@
 require 'player'
 
 describe Player do
-  let(:calculate_winner) {double :calculate_winner}
+  let(:calculate_winner) { double :calculate_winner }
   subject(:player_x) { described_class.new('X') }
   subject(:player_o) { described_class.new('O') }
 

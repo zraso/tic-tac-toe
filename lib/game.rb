@@ -5,14 +5,13 @@ require_relative 'win_calculator'
 require_relative 'field_checker'
 
 class Game
-  attr_reader :player_x, :player_o, :current_player, :over, :winner
+  attr_reader :player_x, :player_o, :current_player, :over
 
   def initialize(player_x: Player.new('X'), player_o: Player.new('O'))
     @player_x = player_x
     @player_o = player_o
     @current_player = player_x
     @over = false
-    @winner = CalculateWinner.new
     @field_checker = FieldChecker.new(player_x, player_o)
   end
 
@@ -20,6 +19,7 @@ class Game
     raise 'Error: field already taken' unless @field_checker.empty?(field)
 
     current_player.claim(field)
+    over?
     switch_turn
   end
 
@@ -29,8 +29,10 @@ class Game
                       else
                         player_x
                       end
-
-    "Player #{@current_player.symbol}'s turn!"
   end
 
+  def over?
+    @over = @field_checker.all_taken?
+    @over = current_player.win
+  end
 end
