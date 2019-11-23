@@ -19,6 +19,6 @@ class Player
   private
 
   def check_winner
-    @win = CalculateWinner.new.check(self)
+    @win = WinCalculator.new.check(self)
   end
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CalculateWinner
+class WinCalculator
   def initialize
     @win_rules = [%w[A1 B2 C3],
                   %w[A3 B2 C1],

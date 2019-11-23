@@ -2,7 +2,7 @@
 
 require 'win_calculator'
 
-describe CalculateWinner do
+describe WinCalculator do
   let(:player_x) { double :player_x }
   let(:player_o) { double :player_o }
 
