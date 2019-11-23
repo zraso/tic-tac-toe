@@ -38,11 +38,4 @@ describe Game do
     end
   end
 
-  describe '#end_game' do
-    it 'ends game if a player wins' do
-      allow(player_x).to receive(:fields) { ['A1', 'B1', 'C1'] }
-      allow(player_o).to receive(:fields) { ['A2', 'B2'] }
-      expect(game.over?).to eq true
-    end
-  end
 end

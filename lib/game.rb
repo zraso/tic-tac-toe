@@ -5,12 +5,13 @@ require_relative 'win_calculator'
 require_relative 'field_checker'
 
 class Game
-  attr_reader :player_x, :player_o, :current_player
+  attr_reader :player_x, :player_o, :current_player, :over, :winner
 
   def initialize(player_x: Player.new('X'), player_o: Player.new('O'))
     @player_x = player_x
     @player_o = player_o
     @current_player = player_x
+    @over = false
     @winner = CalculateWinner.new
     @field_checker = FieldChecker.new(player_x, player_o)
   end
@@ -30,10 +31,6 @@ class Game
                       end
 
     "Player #{@current_player.symbol}'s turn!"
-  end
-
-  def over?
-    true
   end
 
 end
