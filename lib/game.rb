@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require_relative 'player'
+require_relative 'win_calculator'
+require_relative 'field_checker'
 
 class Game
   attr_reader :player_x, :player_o, :current_player
@@ -29,4 +31,9 @@ class Game
 
     "Player #{@current_player.symbol}'s turn!"
   end
+
+  def over?
+    true
+  end
+
 end
