@@ -3,13 +3,14 @@
 require_relative 'player'
 
 class Game
-  attr_reader :player_x, :player_o, :current_player
+  attr_reader :player_x, :player_o, :current_player, :winner
   MAX_FIELDS = 9
 
-  def initialize(player_x: Player.new('X'), player_o: Player.new('O'))
+  def initialize(player_x: Player.new('X'), player_o: Player.new('O'), winner: CalculateWinner.new)
     @player_x = player_x
     @player_o = player_o
     @current_player = player_x
+    @winner = winner
     @in_play = true
   end
 
@@ -51,12 +52,7 @@ class Game
   end
 
   def calculate_winner
-    if player_x.fields.include? ('A1' && 'B2' && 'C3')
-      player_x
-    elsif player_x.fields.include? ('A3' && 'B2' && 'C1')
-      player_x
-    else
-      nil
-    end
+    return player_x if @winner.check(player_x) == true
+    return player_o if @winner.check(player_o) == true
   end
 end

@@ -35,6 +35,7 @@ So that I know I can win,
 I want to check if my claim has completed a row, column or diagonal
 
 * A game is over if a player wins
+
 As a player,
 So I know that the game is over,
 I want to know if a player has won

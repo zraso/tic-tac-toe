@@ -1,4 +1,4 @@
-require 'calculatewinner'
+require 'win_calculator'
 
 describe CalculateWinner do
   let(:player_x) {double :player_x}
