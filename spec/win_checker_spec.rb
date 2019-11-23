@@ -1,11 +1,8 @@
 require 'calculatewinner'
 
 describe CalculateWinner do
-  let(:player_x) {double :player_x, fields: []}
+  let(:player_x) {double :player_x}
   let(:player_o) {double :player_o}
-
-  ## need to be testing whether it's a win or not. So check if the winning grids
-  ## matches what the player has
 
   describe '#check' do
     it 'returns false if play has no winner' do
@@ -14,22 +11,22 @@ describe CalculateWinner do
       expect(subject.check(player_x)).to eq false
     end
 
-    it 'returns player if player has won with Diagonal 1' do
+    it 'returns true if player has won with rule 0' do
       allow(player_x).to receive(:fields) { %w[A1 B2 C3] }
       allow(player_o).to receive(:fields) { %w[A2 B3 C2] }
-      expect(subject.check(player_x)).to eq 'Win'
+      expect(subject.check(player_x)).to eq true
     end
 
-    it 'returns player if player has won with Diagonal 2' do
-      allow(player_x).to receive(:fields) { %w[A3 B2 C1] }
-      allow(player_o).to receive(:fields) { %w[A1 B2 C2] }
-      expect(subject.check(player_x)).to eq 'Win'
+    it 'returns player if player has won with rule 7' do
+      allow(player_x).to receive(:fields) { ['C1', 'C2', 'C3'] }
+      allow(player_o).to receive(:fields) { %w[A2 B1 B2] }
+      expect(subject.check(player_x)).to eq true
     end
 
-    it 'returns player if player has won with Column 1' do
-      allow(player_x).to receive(:fields) { ['A1', 'B1', 'C1'] }
-      allow(player_o).to receive(:fields) { %w[A2 B2 C3] }
-      expect(subject.check(player_x)).to eq "Win"
+    it 'returns true if player has won with fields that are unsorted' do
+      allow(player_x).to receive(:fields) { ['C3', 'C2', 'C1'] }
+      allow(player_o).to receive(:fields) { %w[A2 B1 B2] }
+      expect(subject.check(player_x)).to eq true
     end
 
   end
